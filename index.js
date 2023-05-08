@@ -13,8 +13,8 @@ function checkCashRegister(price, cash, cid) {
   var change = cash - price;
   let result = {
     status: "",
-    change: [],
-  };
+    change: []  
+  }
   let sumCid = 0;
   for (let i = 0; i < cid.length; i++) {
     sumCid += cid[i][1];
@@ -33,17 +33,29 @@ function checkCashRegister(price, cash, cid) {
     result.status = "[]";
   }
 
-  console.log("sumCid", sumCid);
+  // console.log("sumCid", sumCid);
   let newResult = [];
 
   cid = cid.reverse();
   for (i = 0; i < cid.length; i++) {
     let val = 0;
     while (denom[i].value <= change && cid[i][1] > 0) {
+      change=change.toFixed(2)
       cid[i][1] -= denom[i].value;
       change -= denom[i].value;
       val += denom[i].value;
     }
+		if (val > 0){
+			newResult.push([cid[i][0], val])
+		}
   }
+  if (change > 0) {
+    result.status = "INSUFFICIENT_FUNDS"
+    return result
+  }
+  result.status="OPEN"
+  result.change=newResult
   return change;
 }
+
+ console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));   

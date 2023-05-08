@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;1,300&family=Outfit:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="content">
+        <h1>Cash Register Application</h1>
+        <p>Enter the bill amount and cash given by the customer and</p>
+      </section>
+      <form class="bill-form">
+        <div class="form-group">
+          <label for="bill-amount">bill Amount</label>
+          <input type="text" name="bill_amount" placeholder="0.0" required />
+        </div>
+        <div class="form-group">
+          <label for="cash-amount">cash Amount</label>
+          <input
+            type="text"
+            name="cash_amount"
+            id="cash-amount"
+            placeholder="0.0"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit">Check</button>
+        </div>
+      </form>
+      <section class="output">
+        <h2>Return change</h2>
+        <table class="notes">
+          <tbody>
+            <tr>
+              <th>Name of notes</th>
+              <td>ONE HUNDRED</td>
+              <td>TWENTY</td>
+              <td>TEN</td>
+              <td>FIVE</td>
+              <td>ONE</td>
+              <td>QUARTER</td>
+              <td>DIME</td>
+              <td>NICKEL</td>
+              <td>PENNY</td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>100.0</td>
+              <td>20.0</td>
+              <td>10.0</td>
+              <td>5.0</td>
+              <td>1.0</td>
+              <td>0.25</td>
+              <td>0.1</td>
+              <td>0.05</td>
+              <td>0.01</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <footer>
+        <p class="copyright">Done with love by <strong>Tsopse Alvin Ricado</strong>Yaounde le 09/06/2023</p>
+      </footer>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
